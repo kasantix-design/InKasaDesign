@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Våre prosjekter – Firma Navn</title>
+  <title>Firma Navn</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- 🔹 Navigasjon -->
+  <!-- 🔹 NAVIGASJON -->
   <header class="nav-header">
     <div class="nav-container">
       <div class="logo">FIRMA NAVN</div>
       <nav class="nav-links" id="navMenu">
-        <a href="index.html#om">Om oss</a>
-        <a href="index.html#kontakt">Kontakt</a>
-        <a href="index.html#kart">Kart</a>
-        <a href="prosjekter.html" class="active">Våre prosjekter</a>
+        <a href="#om">Om oss</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#kart">Kart</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Meny">
         ☰
@@ -24,70 +23,71 @@
     </div>
   </header>
 
-  <!-- 🔹 Hero -->
-  <section class="hero-box small-hero">
+  <!-- 🔹 HERO-BOKS -->
+  <section class="hero-box">
     <div class="overlay">
-      <h1>VÅRE PROSJEKTER</h1>
+      <h1>FIRMA NAVN</h1>
     </div>
   </section>
 
-  <!-- 🔹 Prosjektseksjon -->
-  <section class="projects-section">
-    <div class="projects-grid">
-
-      <div class="project-card fade-in">
-        <img src="prosjekt1.jpg" alt="Prosjekt 1">
-        <div class="project-content">
-          <h3>Prosjektnavn 1</h3>
-          <p>Kort beskrivelse av prosjektet. Hva det handlet om, mål og resultat.</p>
-        </div>
-      </div>
-
-      <div class="project-card fade-in">
-        <img src="prosjekt2.jpg" alt="Prosjekt 2">
-        <div class="project-content">
-          <h3>Prosjektnavn 2</h3>
-          <p>Beskriv kort prosjektet, med fokus på verdier og resultat.</p>
-        </div>
-      </div>
-
-      <div class="project-card fade-in">
-        <img src="prosjekt3.jpg" alt="Prosjekt 3">
-        <div class="project-content">
-          <h3>Prosjektnavn 3</h3>
-          <p>Beskrivelse av prosjekt, klient og leveranse.</p>
-        </div>
-      </div>
-
+  <!-- 🔹 SVART BOKS MED SIRKLER -->
+  <section class="info-box">
+    <div class="divider"></div>
+    <div class="circle-row">
+      <a href="#om" class="circle">Om oss</a>
+      <a href="#kontakt" class="circle highlight">Kontakt</a>
+      <a href="#kart" class="circle">Kart</a>
     </div>
+    <div class="divider"></div>
   </section>
 
-  <!-- 🔹 Footer -->
+  <!-- 🔹 KONTAKTSEKSJON -->
+  <section id="kontakt" class="hidden-section">
+    <h2>Kontakt oss</h2>
+    <form>
+      <label for="navn">Navn:</label>
+      <input type="text" id="navn" name="navn" required>
+
+      <label for="epost">E-post:</label>
+      <input type="email" id="epost" name="epost" required>
+
+      <label for="melding">Melding:</label>
+      <textarea id="melding" name="melding" rows="4" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- 🔹 OM OSS -->
+  <section id="om" class="hidden-section">
+    <h2>Om oss</h2>
+    <p>Vi tilbyr tjenester inspirert av balanse, tilstedeværelse og kvalitet. 
+       Vårt mål er å skape kontakt, trygghet og ro i alt vi gjør.</p>
+  </section>
+
+  <!-- 🔹 KART -->
+  <section id="kart" class="hidden-section">
+    <h2>Finn oss</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..."
+      width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- 🔹 FOOTER -->
   <footer>
     © 2025 Firma Navn – Alle rettigheter reservert
   </footer>
 
-  <!-- 🔹 Script: Hamburger + Fade-in -->
+  <!-- 🔹 SCRIPT: Hamburger meny -->
   <script>
-    // Hamburger-meny
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     navToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
-
-    // Fade-in ved scroll
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
-
-    fadeElements.forEach(el => observer.observe(el));
   </script>
 
 </body>
 </html>
+
