@@ -1,0 +1,92 @@
+/* ------------------------------
+   FARGER & FONTER
+------------------------------ */
+:root {
+  --background: #F2F2F2;   /* Lys grå bakgrunn */
+  --dark-box: #1C1C1C;     /* Svart seksjon */
+  --text-light: #FFFFFF;
+  --text-dark: #2E2E2E;
+  --accent: #D2B48C;       /* Beige/Tangan-tone */
+  --shadow: rgba(0, 0, 0, 0.08);
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Lora", Arial, sans-serif;
+}
+
+/* ------------------------------
+   GRUNNOPPSETT
+------------------------------ */
+body {
+  background-color: var(--background);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------
+   NAVIGASJON
+------------------------------ */
+.nav-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ------------------------------
+   HERO-SEKSJON
+------------------------------ */
+.hero-box {
+  position: relative;
+  height: 45vh;
+  background: url(
