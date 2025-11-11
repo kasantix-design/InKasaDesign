@@ -1,6 +1,6 @@
-/* ------------------------------
+/* ----------------------------------
    FARGER OG FONTER
------------------------------- */
+---------------------------------- */
 :root {
   --background: #F2F2F2;     /* Lys grå bakgrunn */
   --text-dark: #1E1E1E;
@@ -12,9 +12,9 @@
   --font-sans: "Lora", Arial, sans-serif;
 }
 
-/* ------------------------------
+/* ----------------------------------
    GRUNNOPPSETT
------------------------------- */
+---------------------------------- */
 body {
   margin: 0;
   padding: 0;
@@ -24,19 +24,16 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ------------------------------
+/* ----------------------------------
    NAVIGASJON
------------------------------- */
-
-/* 💡 STANDARD: samme farge som bakgrunn (Alternativ 2) */
+---------------------------------- */
 .nav-header {
   position: sticky;
   top: 0;
-  background: var(--background);
+  background: var(--background); /* ingen stripe */
   border: none;
   backdrop-filter: none;
   z-index: 10;
-  transition: background 0.3s ease;
 }
 
 .nav-container {
@@ -81,26 +78,9 @@ body {
   cursor: pointer;
 }
 
-/* 💎 TRANSPARENT VERSJON (Alternativ 1) */
-.transparent-menu {
-  background: transparent;
-  border: none;
-  backdrop-filter: none;
-}
-
-.transparent-menu .logo,
-.transparent-menu .nav-links a {
-  color: var(--text-light);
-}
-
-.transparent-menu .nav-links a:hover,
-.transparent-menu .nav-links a.active {
-  color: var(--accent);
-}
-
-/* ------------------------------
-   HERO-BOKS (forside + prosjektside)
------------------------------- */
+/* ----------------------------------
+   HERO-BOKS (forside + undersider)
+---------------------------------- */
 .hero-box {
   position: relative;
   width: 90%;
@@ -109,42 +89,49 @@ body {
   margin: 4rem auto 3rem auto;
   box-shadow: 0 10px 30px var(--shadow);
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-image {
+.hero-box img.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%);
-  display: block;
+  z-index: 1;
 }
 
 .hero-box .overlay {
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 2;
 }
 
 .hero-box h1 {
+  position: relative;
+  z-index: 3;
   color: var(--text-light);
   font-family: var(--font-serif);
   font-size: 3rem;
   letter-spacing: 2px;
   text-align: center;
+  padding: 0 1rem;
 }
 
-/* Mindre hero på undersider */
+/* Mindre hero for undersider */
 .small-hero {
   height: 45vh;
   background: url("bilder/prosjekt-hero.jpg") center center/cover no-repeat;
 }
 
-/* ------------------------------
-   NEDRE BOKS (tre kolonner)
------------------------------- */
+/* ----------------------------------
+   TRE SIRKLER NEDERST
+---------------------------------- */
 .split-box {
   background-color: #111;
   width: 90%;
@@ -201,9 +188,9 @@ body {
   color: #111;
 }
 
-/* ------------------------------
+/* ----------------------------------
    PROSJEKTER-SEKSJON
------------------------------- */
+---------------------------------- */
 .projects-section {
   max-width: 1100px;
   margin: 5rem auto;
@@ -269,7 +256,7 @@ body {
 
 .project-content h3 {
   margin-top: 0;
-  color: var(--dark-box);
+  color: var(--text-dark);
   font-family: var(--font-serif);
   font-size: 1.4rem;
 }
@@ -280,9 +267,9 @@ body {
   font-size: 1rem;
 }
 
-/* ------------------------------
+/* ----------------------------------
    FOOTER
------------------------------- */
+---------------------------------- */
 footer {
   text-align: center;
   padding: 3rem 0;
@@ -292,9 +279,9 @@ footer {
   background-color: #fafafa;
 }
 
-/* ------------------------------
+/* ----------------------------------
    RESPONSIV DESIGN
------------------------------- */
+---------------------------------- */
 @media (max-width: 768px) {
   .hero-box h1 {
     font-size: 2.3rem;
