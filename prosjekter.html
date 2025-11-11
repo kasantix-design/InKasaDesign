@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Våre prosjekter – InKasaDesign</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🔹 Navigasjon -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <div class="logo">InKasaDesign</div>
+      <nav class="nav-links" id="navMenu">
+        <a href="index.html">Hjem</a>
+        <a href="prosjekter.html" class="active">Våre prosjekter</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Meny">☰</button>
+    </div>
+  </header>
+
+  <!-- 🔹 Hero-seksjon -->
+  <section class="hero-box small-hero">
+    <div class="overlay">
+      <h1>Våre prosjekter</h1>
+    </div>
+  </section>
+
+  <!-- 🔹 Prosjektseksjon -->
+  <main class="projects-section center-content">
+    <h2>Utforsk våre prosjekter</h2>
+    <p class="intro-text">
+      Et utvalg av våre tidligere arbeider — design, tekstur, og estetisk balanse i fokus.
+    </p>
+
+    <div class="projects-grid centered">
+
+      <div class="project-card fade-in">
+        <img src="bilder/prosjekt1.jpg" alt="Prosjekt 1">
+        <div class="project-content">
+          <h3>Prosjekt 1</h3>
+          <p>Et moderne designprosjekt med sans for struktur, ro og naturlige materialer.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <img src="bilder/prosjekt2.jpg" alt="Prosjekt 2">
+        <div class="project-content">
+          <h3>Prosjekt 2</h3>
+          <p>Et romlig konsept hvor lys og overflate spiller sammen for å skape dybde.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <img src="bilder/prosjekt3.jpg" alt="Prosjekt 3">
+        <div class="project-content">
+          <h3>Prosjekt 3</h3>
+          <p>Minimalistisk uttrykk med varme detaljer og subtile farger i balanse.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 🔹 Footer -->
+  <footer>
+    © 2025 InKasaDesign – Design med balanse og uttrykk
+  </footer>
+
+  <!-- 🔹 Script: Hamburger + Fade-in -->
+  <script>
+    // Hamburger meny
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Fade-in animasjon
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    fadeElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
