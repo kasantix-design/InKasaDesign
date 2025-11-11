@@ -5,7 +5,7 @@
   --background: #F2F2F2;     /* Lys grå bakgrunn */
   --text-dark: #1E1E1E;
   --text-light: #FFFFFF;
-  --accent: #D2B48C;         /* Beige aksentfarge */
+  --accent: #D2B48C;         /* Beige/aprikos aksentfarge */
   --shadow: rgba(0, 0, 0, 0.08);
 
   --font-serif: "Playfair Display", serif;
@@ -30,7 +30,7 @@ body {
 .nav-header {
   position: sticky;
   top: 0;
-  background: var(--background); /* Ingen stripe, samme farge som resten */
+  background: var(--background);
   border: none;
   backdrop-filter: none;
   z-index: 10;
@@ -117,7 +117,7 @@ body {
 /* Hvit tekst over bildet */
 .hero-box h1 {
   position: relative;
-  z-index: 3; /* Sørger for at teksten ligger øverst */
+  z-index: 3;
   color: var(--text-light);
   font-family: var(--font-serif);
   font-size: 3rem;
@@ -137,7 +137,7 @@ body {
    NEDRE BOKS (tre kolonner)
 ---------------------------------- */
 .split-box {
-  background-color: #111;
+  background-color: #111; /* Sort på forsiden */
   width: 90%;
   max-width: 900px;
   height: 300px;
@@ -148,6 +148,11 @@ body {
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   overflow: hidden;
+}
+
+/* 🔹 Ny variant for PROSJEKTER-siden */
+.split-box.projects {
+  background-color: #2b2b2b; /* Mørk grå på prosjektsiden */
 }
 
 .info-column {
@@ -329,3 +334,4 @@ footer {
     gap: 1.5rem;
   }
 }
+
