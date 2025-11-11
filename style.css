@@ -1,41 +1,30 @@
-/* ------------------------------
-   FARGER & FONTER
------------------------------- */
 :root {
-  --background: #F2F2F2;   /* Lys grå bakgrunn */
-  --dark-box: #1C1C1C;     /* Svart seksjon */
+  --background: #F2F2F2;
+  --text-dark: #1E1E1E;
   --text-light: #FFFFFF;
-  --text-dark: #2E2E2E;
-  --accent: #D2B48C;       /* Beige/Tangan-tone */
+  --accent: #D2B48C;
   --shadow: rgba(0, 0, 0, 0.08);
   --font-serif: "Playfair Display", serif;
   --font-sans: "Lora", Arial, sans-serif;
 }
 
-/* ------------------------------
-   GRUNNOPPSETT
------------------------------- */
+/* ---------- Grunnoppsett ---------- */
 body {
-  background-color: var(--background);
-  color: var(--text-dark);
-  font-family: var(--font-sans);
-  font-size: 17px;
-  line-height: 1.7;
   margin: 0;
   padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--text-dark);
 }
 
-/* ------------------------------
-   NAVIGASJON
------------------------------- */
+/* ---------- Navigasjon ---------- */
 .nav-header {
   position: sticky;
   top: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(6px);
-  z-index: 100;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 10;
 }
 
 .nav-container {
@@ -65,16 +54,11 @@ body {
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: var(--accent);
-}
-
+.nav-links a:hover,
 .nav-links a.active {
   color: var(--accent);
-  font-weight: 600;
 }
 
-/* Hamburger */
 .nav-toggle {
   display: none;
   font-size: 1.8rem;
@@ -83,10 +67,140 @@ body {
   cursor: pointer;
 }
 
-/* ------------------------------
-   HERO-SEKSJON
------------------------------- */
+/* ---------- Øverste boks ---------- */
 .hero-box {
   position: relative;
-  height: 45vh;
-  background: url(
+  width: 90%;
+  max-width: 900px;
+  height: 60vh;
+  background: url("inkasa-bw.jpg") center center/cover no-repeat;
+  filter: grayscale(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem auto 3rem auto;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.hero-box .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-box h1 {
+  color: var(--text-light);
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+/* ---------- Nedre boks (delt i tre) ---------- */
+.split-box {
+  background-color: #111;
+  width: 90%;
+  max-width: 900px;
+  height: 300px;
+  margin: 0 auto 5rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  width: 1px;
+  background-color: rgba(255,255,255,0.15);
+  height: 70%;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.circle a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.circle:hover {
+  background-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.circle:hover a {
+  color: #111;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 3rem 0;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- Responsiv ---------- */
+@media (max-width: 768px) {
+  .hero-box {
+    height: 45vh;
+  }
+
+  .split-box {
+    flex-direction: column;
+    height: auto;
+    padding: 3rem 0;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .circle {
+    margin: 1rem 0;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(255,255,255,0.95);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
