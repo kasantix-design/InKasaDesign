@@ -30,7 +30,7 @@ body {
 .nav-header {
   position: sticky;
   top: 0;
-  background: var(--background); /* ingen stripe */
+  background: var(--background); /* Ingen stripe, samme farge som resten */
   border: none;
   backdrop-filter: none;
   z-index: 10;
@@ -94,6 +94,7 @@ body {
   align-items: center;
 }
 
+/* Bildet dekker hele området */
 .hero-box img.hero-image {
   position: absolute;
   top: 0;
@@ -105,22 +106,25 @@ body {
   z-index: 1;
 }
 
+/* Mørk transparent overlay */
 .hero-box .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.45);
   z-index: 2;
 }
 
+/* Hvit tekst over bildet */
 .hero-box h1 {
   position: relative;
-  z-index: 3;
+  z-index: 3; /* Sørger for at teksten ligger øverst */
   color: var(--text-light);
   font-family: var(--font-serif);
   font-size: 3rem;
   letter-spacing: 2px;
   text-align: center;
   padding: 0 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Mindre hero for undersider */
@@ -130,7 +134,7 @@ body {
 }
 
 /* ----------------------------------
-   TRE SIRKLER NEDERST
+   NEDRE BOKS (tre kolonner)
 ---------------------------------- */
 .split-box {
   background-color: #111;
