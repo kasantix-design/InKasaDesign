@@ -3,83 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Firma Navn</title>
+  <title>InKasaDesign</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- 🔹 NAVIGASJON -->
+  <!-- 🔹 Navigasjon -->
   <header class="nav-header">
     <div class="nav-container">
-      <div class="logo">FIRMA NAVN</div>
+      <div class="logo">InKasaDesign</div>
       <nav class="nav-links" id="navMenu">
-        <a href="#om">Om oss</a>
+        <a href="index.html" class="active">Hjem</a>
+        <a href="prosjekter.html">Våre prosjekter</a>
         <a href="#kontakt">Kontakt</a>
-        <a href="#kart">Kart</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Meny">
-        ☰
-      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Meny">☰</button>
     </div>
   </header>
 
-  <!-- 🔹 HERO-BOKS -->
+  <!-- 🔹 Øverste boks -->
   <section class="hero-box">
     <div class="overlay">
-      <h1>FIRMA NAVN</h1>
+      <h1>InKasaDesign</h1>
     </div>
   </section>
 
-  <!-- 🔹 SVART BOKS MED SIRKLER -->
-  <section class="info-box">
-    <div class="divider"></div>
-    <div class="circle-row">
-      <a href="#om" class="circle">Om oss</a>
-      <a href="#kontakt" class="circle highlight">Kontakt</a>
-      <a href="#kart" class="circle">Kart</a>
+  <!-- 🔹 Nedre boks med tre seksjoner -->
+  <section class="info-box split-box">
+    <div class="info-column">
+      <div class="circle">
+        <a href="#om">Om oss</a>
+      </div>
     </div>
+
     <div class="divider"></div>
+
+    <div class="info-column">
+      <div class="circle">
+        <a href="#kart">Kart</a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="info-column">
+      <div class="circle">
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </div>
   </section>
 
-  <!-- 🔹 KONTAKTSEKSJON -->
-  <section id="kontakt" class="hidden-section">
-    <h2>Kontakt oss</h2>
-    <form>
-      <label for="navn">Navn:</label>
-      <input type="text" id="navn" name="navn" required>
-
-      <label for="epost">E-post:</label>
-      <input type="email" id="epost" name="epost" required>
-
-      <label for="melding">Melding:</label>
-      <textarea id="melding" name="melding" rows="4" required></textarea>
-
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <!-- 🔹 OM OSS -->
-  <section id="om" class="hidden-section">
-    <h2>Om oss</h2>
-    <p>Vi tilbyr tjenester inspirert av balanse, tilstedeværelse og kvalitet. 
-       Vårt mål er å skape kontakt, trygghet og ro i alt vi gjør.</p>
-  </section>
-
-  <!-- 🔹 KART -->
-  <section id="kart" class="hidden-section">
-    <h2>Finn oss</h2>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..."
-      width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
-    </iframe>
-  </section>
-
-  <!-- 🔹 FOOTER -->
+  <!-- 🔹 Footer -->
   <footer>
-    © 2025 Firma Navn – Alle rettigheter reservert
+    © 2025 InKasaDesign – Design med balanse og uttrykk
   </footer>
 
-  <!-- 🔹 SCRIPT: Hamburger meny -->
+  <!-- 🔹 Script: Hamburger -->
   <script>
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
