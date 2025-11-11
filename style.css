@@ -73,7 +73,7 @@ body {
   width: 90%;
   max-width: 900px;
   height: 60vh;
-  background: url("inkasa-bw.jpg") center center/cover no-repeat;
+  background: url("prosjekt-hero.jpg") center center/cover no-repeat;
   filter: grayscale(100%);
   display: flex;
   justify-content: center;
