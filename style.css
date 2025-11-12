@@ -2,10 +2,10 @@
    FARGER OG FONTER
 ---------------------------------- */
 :root {
-  --background: #F2F2F2;     /* Lys grå bakgrunn */
+  --background: #F2F2F2;
   --text-dark: #1E1E1E;
   --text-light: #FFFFFF;
-  --accent: #D2B48C;         /* Beige/aprikos aksentfarge */
+  --accent: #D2B48C; /* Beige/aprikos aksentfarge */
   --shadow: rgba(0, 0, 0, 0.08);
 
   --font-serif: "Playfair Display", serif;
@@ -31,8 +31,6 @@ body {
   position: sticky;
   top: 0;
   background: var(--background);
-  border: none;
-  backdrop-filter: none;
   z-index: 10;
 }
 
@@ -79,23 +77,19 @@ body {
 }
 
 /* ----------------------------------
-   HERO-BOKS (forside + undersider)
+   HERO-BOKS
 ---------------------------------- */
 .hero-box {
   position: relative;
   width: 90%;
-  max-width: 900px;
-  height: 60vh;
+  max-width: 1000px;
+  height: 70vh;
   margin: 4rem auto 3rem auto;
   box-shadow: 0 10px 30px var(--shadow);
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-/* Bildet dekker hele området */
-.hero-box img.hero-image {
+.hero-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -106,38 +100,56 @@ body {
   z-index: 1;
 }
 
-/* Mørk transparent overlay */
-.hero-box .overlay {
+.overlay {
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   z-index: 2;
 }
 
-/* Hvit tekst over bildet */
-.hero-box h1 {
+.hero-text {
   position: relative;
   z-index: 3;
   color: var(--text-light);
-  font-family: var(--font-serif);
-  font-size: 3rem;
-  letter-spacing: 2px;
-  text-align: center;
-  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Mindre hero for undersider */
-.small-hero {
-  height: 45vh;
-  background: url("bilder/prosjekt-hero.jpg") center center/cover no-repeat;
+.hero-text h1,
+.hero-text h3 {
+  color: var(--text-light);
+  margin: 0;
+}
+
+.hero-text h1 {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  text-align: left;
+}
+
+.hero-text h3 {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: right;
+  max-width: 450px;
 }
 
 /* ----------------------------------
-   NEDRE BOKS (tre kolonner)
+   NEDRE BOKS
 ---------------------------------- */
 .split-box {
-  background-color: #111; /* Sort på forsiden */
+  background-color: #111;
   width: 90%;
   max-width: 900px;
   height: 300px;
@@ -148,11 +160,6 @@ body {
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   overflow: hidden;
-}
-
-/* 🔹 Ny variant for PROSJEKTER-siden */
-.split-box.projects {
-  background-color: #4d4d4d; /*  grå på prosjektsiden */
 }
 
 .info-column {
@@ -184,8 +191,8 @@ body {
   text-decoration: none;
   font-family: var(--font-serif);
   font-size: 1.1rem;
-  letter-spacing: 0.5px;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .circle:hover {
@@ -195,85 +202,6 @@ body {
 
 .circle:hover a {
   color: #111;
-}
-
-/* ----------------------------------
-   PROSJEKTER-SEKSJON
----------------------------------- */
-.projects-section {
-  max-width: 1100px;
-  margin: 5rem auto;
-  padding: 0 1rem 6rem;
-}
-
-.center-content {
-  text-align: center;
-}
-
-.center-content h2 {
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.intro-text {
-  max-width: 650px;
-  margin: 0 auto 3rem auto;
-  color: #555;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  justify-items: center;
-}
-
-.project-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-  max-width: 340px;
-  text-align: left;
-}
-
-.project-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-}
-
-.project-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.project-content {
-  padding: 1.8rem;
-}
-
-.project-content h3 {
-  margin-top: 0;
-  color: var(--text-dark);
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-}
-
-.project-content p {
-  margin: 0.8rem 0 0;
-  color: #555;
-  font-size: 1rem;
 }
 
 /* ----------------------------------
@@ -292,9 +220,20 @@ footer {
    RESPONSIV DESIGN
 ---------------------------------- */
 @media (max-width: 768px) {
-  .hero-box h1 {
-    font-size: 2.3rem;
-    padding: 0 1rem;
+  .hero-text {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text h3 {
+    text-align: center;
+    font-size: 1rem;
   }
 
   .split-box {
@@ -329,6 +268,7 @@ footer {
   .nav-toggle {
     display: block;
   }
+}
 
   .projects-grid {
     gap: 1.5rem;
