@@ -72,7 +72,7 @@ body {
 }
 
 /* ----------------------------------
-   HERO-BOKS
+   HERO (felles)
 ---------------------------------- */
 .hero-box {
   position: relative;
@@ -105,13 +105,49 @@ body {
   z-index: 2;
 }
 
-.hero-center-text {
+/* Hero-tekst på forsiden (venstre/høyre) */
+.hero-text {
   position: relative;
   z-index: 3;
   color: var(--text-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.hero-text h1 {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  text-align: left;
+  margin: 0;
+  color: var(--text-light);
+}
+
+.hero-text h3 {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: right;
+  max-width: 450px;
+  color: var(--text-light);
+}
+
+/* Hero-tekst for prosjektsiden (midtstilt) */
+.hero-center-text {
+  position: relative;
+  z-index: 3;
   text-align: center;
+  color: var(--text-light);
   max-width: 700px;
   padding: 1rem;
+  animation: fadeIn 1.2s ease-out forwards;
 }
 
 .hero-center-text h1 {
@@ -128,20 +164,33 @@ body {
   color: var(--text-light);
 }
 
+/* Fade-in animasjon */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 /* ----------------------------------
-   SPLIT-BOKS (grå variant for prosjekter)
+   SPLIT-BOKSER
 ---------------------------------- */
-.split-box.projects {
-  background-color: #4d4d4d;
+.split-box {
   width: 90%;
   max-width: 900px;
   height: 300px;
-  margin: 3rem auto 5rem auto;
+  margin: 0 auto 5rem auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.split-box:not(.projects) {
+  background-color: #111; /* Sort for forsiden */
+}
+
+.split-box.projects {
+  background-color: #4d4d4d; /* Grå for prosjektsiden */
 }
 
 .info-column {
@@ -257,15 +306,21 @@ footer {
    RESPONSIVT
 ---------------------------------- */
 @media (max-width: 768px) {
-  .hero-center-text h1 {
+  .hero-text {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text h1 {
     font-size: 2.3rem;
   }
 
-  .hero-center-text p {
+  .hero-text h3 {
     font-size: 1rem;
   }
 
-  .split-box.projects {
+  .split-box {
     flex-direction: column;
     height: auto;
     padding: 3rem 0;
