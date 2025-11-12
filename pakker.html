@@ -1,23 +1,139 @@
-<section class="split-box projects">
-  <div class="info-column">
-    <div class="circle">
-      <a href="#basis">Basis</a>
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakker – InKasaDesign</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* --- Lokale justeringer for pakker.html --- */
+    .package-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #2b2b2b;
+      background: var(--background);
+      padding: 4rem 2rem;
+      transition: all 1s ease-out;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    .package-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .package-box {
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      padding: 3rem;
+      max-width: 800px;
+    }
+
+    .package-box h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    .package-box p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .package-box {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔹 Navigasjon -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <div class="logo">InKasaDesign</div>
+      <nav class="nav-links" id="navMenu">
+        <a href="index.html">Hjem</a>
+        <a href="prosjekter.html">Våre prosjekter</a>
+        <a href="pakker.html" class="active">Pakker</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Meny">☰</button>
     </div>
-  </div>
+  </header>
 
-  <div class="divider"></div>
-
-  <div class="info-column">
-    <div class="circle">
-      <a href="#komplett">Komplett</a>
+  <!-- 🔹 Seksjon 1: Basis -->
+  <section id="basis" class="package-section">
+    <div class="package-box">
+      <h2>Basis</h2>
+      <p>Den perfekte løsningen for deg som ønsker en elegant nettside med standard funksjonalitet og personlig tilpasning.</p>
+      <p>• Moderne og responsivt design<br>• E-postintegrasjon<br>• Grunnleggende SEO og opplæring</p>
     </div>
-  </div>
+  </section>
 
-  <div class="divider"></div>
-
-  <div class="info-column">
-    <div class="circle">
-      <a href="#premium">Premium</a>
+  <!-- 🔹 Seksjon 2: Komplett -->
+  <section id="komplett" class="package-section">
+    <div class="package-box">
+      <h2>Komplett</h2>
+      <p>For deg som ønsker en kraftigere løsning med flere funksjoner og dypere systemintegrasjon.</p>
+      <p>• Alt i Basis<br>• Egendesignet layout og funksjoner<br>• Integrasjon av kontaktskjema og analyseverktøy</p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- 🔹 Seksjon 3: Premium -->
+  <section id="premium" class="package-section">
+    <div class="package-box">
+      <h2>Premium</h2>
+      <p>Full pakke for bedrifter som vil ha en komplett digital plattform med drift, support og skreddersydd funksjonalitet.</p>
+      <p>• Alt i Komplett<br>• Coachingportal og brukerstyring<br>• Løpende drift og prioritetssupport</p>
+    </div>
+  </section>
+
+  <!-- 🔹 Footer -->
+  <footer>
+    © 2025 InKasaDesign – Design med balanse og uttrykk
+  </footer>
+
+  <!-- 🔹 Script -->
+  <script>
+    // Hamburger meny
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Fade-in ved scroll
+    const sections = document.querySelectorAll('.package-section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Rull direkte til riktig del hvis #ankere brukes
+    window.addEventListener("load", () => {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
+
