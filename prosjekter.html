@@ -25,7 +25,10 @@
   <section class="hero-box small-hero">
     <img src="bilder/omoss.jpg" alt="InKasaDesign prosjektbilde" class="hero-image" />
     <div class="overlay">
-      <h1>Våre prosjekter</h1>
+      <div class="hero-center-text">
+        <h1>Våre prosjekter</h1>
+        <p>Unike designløsninger med balanse, funksjon og identitet i fokus.</p>
+      </div>
     </div>
   </section>
 
@@ -64,7 +67,7 @@
       Hos InKasaDesign kombinerer vi estetikk og funksjon for resultater som varer.
     </p>
 
-    <div class="projects-grid centered">
+    <div class="projects-grid">
       <div class="project-card fade-in">
         <img src="bilder/prosjekt1.jpg" alt="Prosjekt 1 – moderne designprosjekt" />
         <div class="project-content">
@@ -96,16 +99,14 @@
     © 2025 InKasaDesign – Design med balanse og uttrykk
   </footer>
 
-  <!-- 🔹 Script: Hamburger + Fade-in -->
+  <!-- 🔹 Script -->
   <script>
-    // Hamburger meny
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     navToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
 
-    // Fade-in animasjon
     const fadeElements = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -118,3 +119,4 @@
 
 </body>
 </html>
+
