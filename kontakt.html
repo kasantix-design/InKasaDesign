@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt oss – InKasaDesign</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🔹 Navigasjon -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <div class="logo">InKasaDesign</div>
+      <nav class="nav-links" id="navMenu">
+        <a href="index.html">Hjem</a>
+        <a href="prosjekter.html">Våre prosjekter</a>
+        <a href="kontakt.html" class="active">Kontakt</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Meny">☰</button>
+    </div>
+  </header>
+
+  <!-- 🔹 Kontaktseksjon -->
+  <main class="kontakt-seksjon" style="padding: 80px 20px; text-align: center;">
+    <h1>Kontakt oss</h1>
+    <p style="max-width: 600px; margin: 0 auto;">
+      Har du spørsmål eller ønsker å komme i kontakt med oss?<br>
+      Send gjerne en e-post til:
+    </p>
+
+    <p style="font-size: 1.2rem; margin-top: 20px;">
+      <a href="mailto:kontakt.variasjon@proton.me" style="color: var(--lavendel-dark); font-weight: bold;">
+        kontakt.variasjon@proton.me
+      </a>
+    </p>
+  </main>
+
+  <!-- 🔹 Footer -->
+  <footer>
+    © 2025 InKasaDesign – Design med balanse og uttrykk
+  </footer>
+
+  <!-- 🔹 Script: Hamburger -->
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
